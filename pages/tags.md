@@ -1,2 +1,2 @@
-- {{query (and redis )}}
+- {{query (and Redis)}}
   query-table:: false
