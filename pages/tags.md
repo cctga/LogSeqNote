@@ -1,3 +1,1 @@
-- #+BEGIN_QUERY
-  
-  #+END_QUERY
+- {{query (and #客户端 #数据库)}}
