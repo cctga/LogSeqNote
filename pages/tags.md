@@ -1,1 +1,2 @@
-- {{query #客户端}}
+- {{query (and redis )}}
+  query-table:: false
