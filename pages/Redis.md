@@ -1,4 +1,5 @@
 alias:: redis
+title:: Redis
 
 -
 -
