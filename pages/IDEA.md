@@ -26,6 +26,10 @@
 		  }
 		  ```
 		- .case
+		  ```java
+		  123.cast
+		  ((float) 123)
+		  ```
 		- .return
 - 问题
 	- [[MyBatis]] mapper.xml 无法识别字段
