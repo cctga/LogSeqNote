@@ -1,3 +1,4 @@
+- 参考
+	- [官网](https://logseq.com/)
+	- [中文社区](https://cn.logseq.com/)
 - [[快捷键]]
-- [官网](https://logseq.com/)
--
