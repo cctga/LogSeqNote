@@ -44,9 +44,9 @@
 			- ifn
 			- main 自定义
 			- ps 自定义
-		-
+		- 自定义
+			- ![image.png](../assets/image_1634454612285_0.png){:height 495, :width 640}
 		- [参考](https://www.jetbrains.com/help/idea/template-variables.html#predefined_functions)
-		-
 - 问题
 	- [[MyBatis]] mapper.xml 无法识别字段
 		- 搜索 `sql Resolution Scopes` 选择数据库
