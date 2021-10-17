@@ -37,8 +37,8 @@
 		  // after
 		  return "hello";
 		  ```
-	- Live templates(动态模版)
-		-
+	- Live Templates(动态模版)
+		- 参考
 - 问题
 	- [[MyBatis]] mapper.xml 无法识别字段
 		- 搜索 `sql Resolution Scopes` 选择数据库
