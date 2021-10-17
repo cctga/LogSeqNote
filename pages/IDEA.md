@@ -1,5 +1,6 @@
 - [[快捷键]]
 - 小技巧
+  collapsed:: true
 	- postfix completion (后缀自动完成 )
 	  collapsed:: true
 		- `.sout`
