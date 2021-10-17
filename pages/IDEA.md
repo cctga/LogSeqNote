@@ -9,8 +9,7 @@
 		  // after
 		  System.out.println("item = " + item);
 		  ```
-		- `.for`
-		- `.fori`
+		- `.for` `.fori`
 		- `.var`
 		- `.null` `.nn`
 		  ```java
@@ -18,9 +17,14 @@
 		  obj.null
 		  // after
 		  if(obj == null){
-		  	...
+		    ...
 		  }
-		- ```
+		  
+		  //.nn (not null)
+		  if(obj != null){
+		    ...
+		  }
+		  ```
 - 问题
 	- [[MyBatis]] mapper.xml 无法识别字段
 		- 搜索 `sql Resolution Scopes` 选择数据库
