@@ -38,7 +38,8 @@
 		  return "hello";
 		  ```
 	- Live Templates(动态模版)
-		- 参考
+		- [参考](https://www.jetbrains.com/help/idea/template-variables.html#predefined_functions)
+		-
 - 问题
 	- [[MyBatis]] mapper.xml 无法识别字段
 		- 搜索 `sql Resolution Scopes` 选择数据库
