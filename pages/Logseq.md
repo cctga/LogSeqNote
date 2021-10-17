@@ -1,3 +1,2 @@
-- 快捷键 {{embed ((616adc9e-9740-4997-abbb-c60fd545e276))}}
-- {{embed ((616adc9e-9740-4997-abbb-c60fd545e276))}}
-- hello
+- 快捷键
+	- {{embed ((616adc9e-9740-4997-abbb-c60fd545e276))}}
