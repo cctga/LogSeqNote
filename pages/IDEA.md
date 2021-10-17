@@ -38,13 +38,15 @@
 		  return "hello";
 		  ```
 	- Live Templates(动态模版)
-		- [参考](https://www.jetbrains.com/help/idea/template-variables.html#predefined_functions)
 		- 常用
 			- fori
 			- sout
 			- ifn
 			- main 自定义
 			- ps 自定义
+		-
+		- [参考](https://www.jetbrains.com/help/idea/template-variables.html#predefined_functions)
+		-
 - 问题
 	- [[MyBatis]] mapper.xml 无法识别字段
 		- 搜索 `sql Resolution Scopes` 选择数据库
