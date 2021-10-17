@@ -1,7 +1,8 @@
 - 小问题
-	- 插入或更新
-		- [参考](https://baijiahao.baidu.com/s?id=1644358136491778500&wfr=spider&for=pc)
+	- 插入或更新 [🔗](https://baijiahao.baidu.com/s?id=1644358136491778500&wfr=spider&for=pc)
 		- ignore
 		- on duplicate key update
 		- insert...select...where not exists
 		- replace into
+	- 编码问题
+		-
