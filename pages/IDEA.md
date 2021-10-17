@@ -5,7 +5,9 @@
 		- soutv
 		  ```java
 		  // before
-		  
+		  item.soutv
+		  // after
+		  System.out.println("item = " + item);
 		  ```
 - 问题
 	- [[MyBatis]] mapper.xml 无法识别字段
