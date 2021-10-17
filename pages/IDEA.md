@@ -43,6 +43,8 @@
 			- fori
 			- sout
 			- ifn
+			- main 自定义
+			- ps 自定义
 - 问题
 	- [[MyBatis]] mapper.xml 无法识别字段
 		- 搜索 `sql Resolution Scopes` 选择数据库
