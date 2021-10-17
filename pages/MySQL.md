@@ -18,14 +18,13 @@
 		  `utf8_general_ci`  `utf8mb4_0900_ai_ci`
 		- 解答
 		  先要明白 mysql 编码是如何使用的，包括三步：
-		  字符编码，确定字符码值
-		  其中的 utf8，意思就是使用 unicode 编码
-		  存储传输规则的设定（character set）
-		  编码确定了但是不知道怎么存储传输，所以需要 utf8（其他还有 utf16，utf32 等）
+		  1. 字符编码，确定字符码值
+		      其中的 utf8，意思就是使用 unicode 编码
+		  2. 存储传输规则的设定（character set）
+		      编码确定了但是不知道怎么存储传输，所以需要 utf8（其他还有 utf16，utf32 等）
 		  其中 utf8 和 utf8mb4 的区别：
 		  utf8 为早期版本，最长字节为 3 ，实际上也就是 utf8mb3
 		  utf8mb4 兼容了 4 字节的字符，比如 😊，😭，🚗 等
 		  排序规则（collation）
 		  前两者都确定了之后，数据库还要确定排序规则
-		  utf8_general_ci
-		- utf8mb4_0900_ai_ci
+		  `utf8_general_ci` `utf8mb4_0900_ai_ci`
