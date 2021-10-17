@@ -2,4 +2,4 @@
 - 小技巧
 - 问题
 	- [[MyBatis]] mapper.xml 无法识别字段
-		- 搜索 _sql Resolution Scopes_ 选择数据库
+		- 搜索 `sql Resolution Scopes` 选择数据库
