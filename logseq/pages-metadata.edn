@@ -9,7 +9,7 @@
   :block/updated-at 1634387964819}
  {:block/name "contents",
   :block/created-at 1634387964819,
-  :block/updated-at 1634450589655}
+  :block/updated-at 1634492422929}
  {:block/name "a",
   :block/created-at 1634387964819,
   :block/updated-at 1634387964819}
@@ -18,7 +18,7 @@
   :block/updated-at 1634459037114}
  {:block/name "idea",
   :block/created-at 1634434393530,
-  :block/updated-at 1634454649084}
+  :block/updated-at 1634492422929}
  {:block/name "microsoft",
   :block/created-at 1634459037114,
   :block/updated-at 1634459037114}
@@ -34,6 +34,9 @@
  {:block/name "bash",
   :block/created-at 1634459037114,
   :block/updated-at 1634459037114}
+ {:block/name "2021-10-18",
+  :block/created-at 1634515200000,
+  :block/updated-at 1634515200000}
  {:block/name "card",
   :block/created-at 1634387964819,
   :block/updated-at 1634387964819}
@@ -83,8 +86,8 @@
   :block/created-at 1634387964819,
   :block/updated-at 1634387964819}
  {:block/name "log",
-  :block/created-at 1634460653830,
-  :block/updated-at 1634460653830}
+  :block/created-at 1634562153776,
+  :block/updated-at 1634562153776}
  {:block/name "模拟器",
   :block/created-at 1634459037114,
   :block/updated-at 1634459037114}
@@ -94,7 +97,7 @@
  {:block/name "git",
   :block/created-at 1634397347699,
   :block/updated-at 1634397721053}
- {:block/name "terminal",
+ {:block/name "termius",
   :block/created-at 1634435098385,
   :block/updated-at 1634459113349}
  {:block/name "操作系统",
