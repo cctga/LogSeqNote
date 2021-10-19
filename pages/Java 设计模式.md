@@ -10,9 +10,9 @@
 		- 静态代理
 		- 动态代理
 			- ASM
-			- CGLib
+			- CGLIB
 			- JDK
-			-
+			- Javassist
 	- 装饰模式
 	- 组合模式
 	- 适配器模式
