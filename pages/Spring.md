@@ -23,4 +23,6 @@
 - AOP
 	- 声明式事务控制
 - IOC
+	- 什么是 IOC
+		- Inversion of Control 控制反转
 	- Bean 容器管理
