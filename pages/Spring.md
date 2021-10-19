@@ -24,7 +24,7 @@
 	- 声明式事务控制
 - IOC
 	- 什么是 IOC
-		- Inversion of Control 控制反转
+		- Inversion of Control 控制反转， ((616ed63a-72d0-4438-9331-f237f8a228ca))
 		- 优化 Java 对象的创建管理问题，对象统一交给 Spring 管理，由 Spring 容器控制 Java 对象（Bean）
 	- 解决了什么问题
 		- 对象之间的耦合问题
