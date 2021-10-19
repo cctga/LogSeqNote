@@ -13,6 +13,9 @@
  {:block/name "a",
   :block/created-at 1634387964819,
   :block/updated-at 1634387964819}
+ {:block/name "高效学习法: 用思维导图和知识卡片快速构建个人知识体系",
+  :block/created-at 1634641100240,
+  :block/updated-at 1634641100240}
  {:block/name "swift",
   :block/created-at 1634459037114,
   :block/updated-at 1634459037114}
@@ -25,6 +28,15 @@
  {:block/name "ssh",
   :block/created-at 1634459037115,
   :block/updated-at 1634459037115}
+ {:block/name "2021-10-19",
+  :block/created-at 1634601600000,
+  :block/updated-at 1634601600000}
+ {:block/name "学习回路",
+  :block/created-at 1634641100240,
+  :block/updated-at 1634641100240}
+ {:block/name "提高记忆的100种方法",
+  :block/created-at 1634641100240,
+  :block/updated-at 1634641100240}
  {:block/name "关系型数据库",
   :block/created-at 1634459037115,
   :block/updated-at 1634459037115}
@@ -37,6 +49,9 @@
  {:block/name "2021-10-18",
   :block/created-at 1634515200000,
   :block/updated-at 1634515200000}
+ {:block/name "高效学习法用思维导图和知识卡片快速构建个人知识体系",
+  :block/created-at 1634641100240,
+  :block/updated-at 1634641100240}
  {:block/name "card",
   :block/created-at 1634387964819,
   :block/updated-at 1634387964819}
@@ -64,6 +79,9 @@
  {:block/name "客户端",
   :block/created-at 1634397737089,
   :block/updated-at 1634397762968}
+ {:block/name "高效学习",
+  :block/created-at 1634564833666,
+  :block/updated-at 1634568287323}
  {:block/name "logseq",
   :block/created-at 1634393191901,
   :block/updated-at 1634459674120}
@@ -73,6 +91,9 @@
  {:block/name "done",
   :block/created-at 1634387964819,
   :block/updated-at 1634387964819}
+ {:block/name "地图卡",
+  :block/created-at 1634641100240,
+  :block/updated-at 1634641100240}
  {:block/name "create",
   :block/created-at 1634459037114,
   :block/updated-at 1634459037114}
@@ -86,8 +107,8 @@
   :block/created-at 1634387964819,
   :block/updated-at 1634387964819}
  {:block/name "log",
-  :block/created-at 1634562153776,
-  :block/updated-at 1634562153776}
+  :block/created-at 1634641100241,
+  :block/updated-at 1634641100241}
  {:block/name "模拟器",
   :block/created-at 1634459037114,
   :block/updated-at 1634459037114}
@@ -103,6 +124,9 @@
  {:block/name "操作系统",
   :block/created-at 1634459037115,
   :block/updated-at 1634459037115}
+ {:block/name "书籍",
+  :block/created-at 1634566147402,
+  :block/updated-at 1634566224919}
  {:block/name "非关系性数据库",
   :block/created-at 1634459037115,
   :block/updated-at 1634459037115}
@@ -121,6 +145,15 @@
  {:block/name "in-progress",
   :block/created-at 1634387964819,
   :block/updated-at 1634387964819}
+ {:block/name "知识卡片",
+  :block/created-at 1634566102152,
+  :block/updated-at 1634566975811}
+ {:block/name "高效学习法：用思维导图和知识卡片快速构建个人知识体系",
+  :block/created-at 1634565155441,
+  :block/updated-at 1634567627720}
+ {:block/name "单点卡",
+  :block/created-at 1634566435610,
+  :block/updated-at 1634567282378}
  {:block/name "edge",
   :block/created-at 1634459037114,
   :block/updated-at 1634459037114}
@@ -133,18 +166,27 @@
  {:block/name "b",
   :block/created-at 1634387964819,
   :block/updated-at 1634387964819}
+ {:block/name "思维导图",
+  :block/created-at 1634641100241,
+  :block/updated-at 1634641100241}
  {:block/name "chrome",
   :block/created-at 1634459037115,
   :block/updated-at 1634459037115}
  {:block/name "xcode",
   :block/created-at 1634459037114,
   :block/updated-at 1634459037114}
+ {:block/name "高效学习法:用思维导图和知识卡片快速构建个人知识体系",
+  :block/created-at 1634641100241,
+  :block/updated-at 1634641100241}
  {:block/name "doing",
   :block/created-at 1634387964819,
   :block/updated-at 1634387964819}
  {:block/name "redis",
   :block/created-at 1634392177865,
   :block/updated-at 1634397667970}
+ {:block/name "组合卡",
+  :block/created-at 1634641100241,
+  :block/updated-at 1634641100241}
  {:block/name "todo",
   :block/created-at 1634387964819, 
   :block/updated-at 1634387964819}]
