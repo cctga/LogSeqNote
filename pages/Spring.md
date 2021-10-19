@@ -25,5 +25,5 @@
 - IOC
 	- 什么是 IOC
 		- Inversion of Control 控制反转
-		- 优化 Java 对象的创建管理问题
+		- 优化 Java 对象的创建管理问题，对象统一交给 Spring 管理
 	- Bean 容器管理
