@@ -10,6 +10,9 @@
 			- 微服务
 		- Spring Data
 			- 数据源管理
+- Spring 优势
+	- 解耦，简化开发
+	- AOP
 - AOP
 	- 声明式事务控制
 - IOC
