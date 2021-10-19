@@ -24,7 +24,9 @@
   id:: 616eb420-adf0-47f7-b0a9-01767e8cb189
 	- Aspect oriented Programming 面向切面编程
 	- AOP 是什么
-		- 是 [[OOP]] 的延续
+		- 是 [[OOP]] 的延续，横向抽取共有的逻辑
+		- 解决重复问题
+		-
 - IOC
 	- 什么是 IOC
 		- Inversion of Control 控制反转
