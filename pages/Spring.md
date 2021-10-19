@@ -21,6 +21,7 @@
 - 核心结构
 	-
 - AOP
+  id:: 616eb420-adf0-47f7-b0a9-01767e8cb189
 	- Aspect oriented Programming 面向切面编程
 	- AOP 是什么
 		- 是 [[OOP]] 的延续
