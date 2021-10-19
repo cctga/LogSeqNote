@@ -21,7 +21,7 @@
 - 核心结构
 	-
 - AOP
-	- Aspect
+	- Aspect oriented Programming 面向切面编程
 	- AOP 是什么
 		- 是 [[OOP]] 的延续
 - IOC
