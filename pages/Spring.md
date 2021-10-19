@@ -1,14 +1,16 @@
 - 简介
 	- 分层，全栈，轻量级，胶水
 	- [spring 官网](https://spring.io)
-	- Spring 项目
+	- Spring 部分项目
+		- Spring Framework
+			- 核心
+			- IOC，AOP
 		- Spring Boot
 			- Spring 项目脚手架
 		- Spring Cloud
 			- 微服务
 		- Spring Data
 			- 数据源管理
-		- ...
 - AOP
 	- 声明式事务控制
 - IOC
