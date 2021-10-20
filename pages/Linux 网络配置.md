@@ -2,3 +2,6 @@
 	- Ubuntu 18.04+
 	-
 - network
+	- 配置文件 `/etc/network/interfaces`
+	- 配置例子
+		-
