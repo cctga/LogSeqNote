@@ -4,3 +4,5 @@
 		- `-n` `--interval` 刷新周期，默认 2s
 		- `-d` `--differences`
 		- `-t` `-no-title`
+	- 例子
+		-
