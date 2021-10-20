@@ -9,4 +9,7 @@
 		  ```bash
 		  watch 'ls /dev | grep ttyUSB'
 		  ```
-		-
+		- 定时查询内存
+		  ```bash 
+		  watch 'free mh'
+		  ```
