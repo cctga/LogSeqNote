@@ -1,5 +1,6 @@
 - netplay
-	- Ubuntu 18.04+
+	- Ubuntu 18.04+ 使用
+	-
 	-
 - network
 	- 配置文件 `/etc/network/interfaces`
