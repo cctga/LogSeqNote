@@ -1,6 +1,6 @@
 - netplay
-	- Ubuntu 18.04+ 使用
-	-
+	- Ubuntu 18.04+
+	- 配置文件 `/etc/netplay/*.yml`
 	-
 - network
 	- 配置文件 `/etc/network/interfaces`
