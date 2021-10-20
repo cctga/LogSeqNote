@@ -1,9 +1,7 @@
 - [[快捷键]]
 - 小技巧
-  collapsed:: true
 	- tf
 	- postfix completion (后缀自动完成 )
-	  collapsed:: true
 		- `.sout`
 		- `.soutv`
 		  id:: 616bdf72-71c5-4071-8e08-f91332b51f78
