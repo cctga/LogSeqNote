@@ -6,3 +6,6 @@
 		- `-t` `-no-title`
 	- 例子
 		-
+		- ```bash
+		  watch 'ls /dev | grep ttyUSB'
+		  ```
