@@ -5,7 +5,8 @@
 		- `-d` `--differences`
 		- `-t` `-no-title`
 	- 例子
-		-
-		- ```bash
+		- 定时查询串口
+		  ```bash
 		  watch 'ls /dev | grep ttyUSB'
 		  ```
+		-
