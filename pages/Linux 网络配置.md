@@ -12,4 +12,6 @@
 		  gateway 192.168.1.100
 		  dns-nameservers 1.0.0.1,1.1.1.1
 		  ```
-		-
+	- 使配置生效
+		- 重启网络 `sudo systemctl restart networking`
+		- 或 `sudo /etc/init.d/networking restart`
