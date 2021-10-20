@@ -12,7 +12,8 @@
 	- 原型模式
 	- 工厂模式
 		- 解耦
-			- 工厂自己选择一个实现类来实例化返回
+		  collapsed:: true
+			- 工厂可以自己选择一个实现类来实例化返回
 			  ```java
 			  public class Factory {
 			    public static Service getService(){
