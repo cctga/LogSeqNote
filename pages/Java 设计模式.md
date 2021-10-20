@@ -14,7 +14,14 @@
 		- 解耦
 			- 工厂自己选择一个实现类来实例化返回
 			  ```java
+			  public class Factory {
+			    public static Service getService(){
+			      return new ServiceImpl();
+			    }
+			  }
 			  
+			  // 使用
+			  Service service = Factory.getService();
 			  ```
 	- 抽象工厂
 	- 建造者模式
