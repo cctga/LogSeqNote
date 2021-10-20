@@ -1,6 +1,6 @@
 - watch
   > 监听命令的输出，动态变化
 	- 参数
-		- -n
-		- `-d` --differences
+		- `-n` `--interval` 刷新周期，默认 2s
+		- `-d` `--differences`
 		- `-t` `-no-title`
