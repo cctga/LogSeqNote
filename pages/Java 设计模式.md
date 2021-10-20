@@ -21,6 +21,8 @@
 			  }
 			  
 			  // 使用
+			  // 使用者不知道具体的实现类细节
+			  // 依赖倒置，面向接口编程
 			  Service service = Factory.getService();
 			  ```
 	- 抽象工厂
