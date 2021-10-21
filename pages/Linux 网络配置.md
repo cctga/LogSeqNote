@@ -83,8 +83,8 @@
 		  iface enp10s0 inet static
 		  address 192.168.1.162
 		  netmask 255.255.255.0
-		  gateway 192.168.1.100
-		  dns-nameservers 1.0.0.1,1.1.1.1
+		  gateway 192.168.1.1
+		  dns-nameservers 8.8.8.8,114.114.114.114
 		  ```
 		- `auto` 表示开机启动网卡
 	- 使配置生效
