@@ -5,7 +5,13 @@
 		- ```yml
 		  
 		  ```
-	-
+	- 生效
+		-
+		- 测试配置文件
+		  ```bash
+		  sudo netplay try
+		  ```
+		-
 - network
 	- 配置文件 `/etc/network/interfaces`
 	- 配置例子
