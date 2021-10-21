@@ -28,7 +28,19 @@
 				          addresses: [114.114.114.114, 8.8.8.8]
 				  ```
 			- 多地址单网关
-				-
+			  collapsed:: true
+				- ```yml
+				  network:
+				    version: 2
+				    renderer: networkd # 可以配置成 NetworkManager 将网络配置托管给网络管理器
+				    ethernets: # 表示有线网卡, 无线使用 wifis:
+				      enp3s0:
+				         addresses:
+				             - 10.100.1.38/24
+				             - 10.100.1.39/24
+				         gateway4: 10.100.1.1
+				  ```
+			-
 	- 生效
 		-
 		- 测试配置文件
