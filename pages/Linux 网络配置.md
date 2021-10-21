@@ -3,7 +3,9 @@
 	- 配置文件 `/etc/netplay/*.yml`
 	- 配置例子
 		- dhcp
-			-
+			- ```yml
+			  
+			  ```
 		- 静态 IP
 			- 单地址单网关
 			- ```yml
