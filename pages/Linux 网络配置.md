@@ -11,7 +11,10 @@
 		  ```bash
 		  sudo netplay try
 		  ```
-		-
+		- 应用配置文件
+		  ```bash
+		  sudo netplay apply
+		  ```
 - network
 	- 配置文件 `/etc/network/interfaces`
 	- 配置例子
