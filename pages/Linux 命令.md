@@ -15,3 +15,4 @@
 		  watch 'free mh'
 		  ```
 - route
+- traceroute
