@@ -1,7 +1,7 @@
 alias:: Spring Framework
 
 - 简介
-	- 分层，全栈，轻量级[^1]，胶水
+	- 分层，全栈， [[]] [^1]，胶水
 	- [spring 官网](https://spring.io)
 	- Spring 部分项目
 		- Spring Framework
