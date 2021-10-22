@@ -10,9 +10,10 @@
 - 创建模式 5
 	- 单例模式
 	- 原型模式
-	- 工厂模式 alias:: Facotry
+	- 工厂模式  
+	  alias:: Facotry
+	  id:: 616ed525-f391-408b-b265-d9e74f36f118
 		- 解耦
-		  collapsed:: true
 			- 工厂可以自己选择一个实现类来实例化返回
 			  ```java
 			  public class Factory {
