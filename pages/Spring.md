@@ -1,11 +1,9 @@
-alias:: Spring fr
+alias:: Spring Framework
 
 - 简介
-  collapsed:: true
 	- 分层，全栈，轻量级，胶水
 	- [spring 官网](https://spring.io)
-	- Spring 部分项目 [^1]
-	  collapsed:: true
+	- Spring 部分项目 [^1]: jjj
 		- Spring Framework
 		  collapsed:: true
 			- 核心
@@ -28,7 +26,6 @@ alias:: Spring fr
 	- 降低 JavaEE API 的使用难度
 	- 优秀的源码
 - 核心结构
-  collapsed:: true
 	-
 - IOC
 	- 什么是 IOC
