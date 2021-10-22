@@ -15,4 +15,5 @@
 		  watch 'free mh'
 		  ```
 - route
+	- 查看
 - traceroute
