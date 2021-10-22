@@ -1,5 +1,5 @@
 - 这是还未整理的知识
 -
--
-- JDK 9 中 newInstance 过时的问题
-	-
+- 问题
+	- JDK 9 中 newInstance 显示过时的问题
+		- 推荐使用 `clazz.getDeclaredConstructor().newInstance()`
