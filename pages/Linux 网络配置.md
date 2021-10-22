@@ -87,6 +87,7 @@
 		  dns-nameservers 8.8.8.8,114.114.114.114
 		  ```
 		- `auto` 表示开机启动网卡
+		- `dns-nameservers`
 	- 使配置生效
 		- 重启网络 `sudo systemctl restart networking`
 		- 或 `sudo /etc/init.d/networking restart`
