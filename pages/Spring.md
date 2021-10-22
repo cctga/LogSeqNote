@@ -1,3 +1,5 @@
+alias:: Spring fr
+
 - 简介
   collapsed:: true
 	- 分层，全栈，轻量级，胶水
