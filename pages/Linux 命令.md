@@ -15,7 +15,7 @@
 		  watch 'free mh'
 		  ```
 - route
-	- 查看路由
+	- 查看路由,
 		- ```bash
 		  route -n
 		  ```
