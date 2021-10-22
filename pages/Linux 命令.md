@@ -15,8 +15,12 @@
 		  watch 'free mh'
 		  ```
 - route
-	- 查看路由,
+	- 查看路由，显示为 IP
 		- ```bash
 		  route -n
+		  ```
+		- 显示为名称
+		  ```bash
+		  route
 		  ```
 - traceroute
