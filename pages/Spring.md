@@ -41,7 +41,8 @@
 	  collapsed:: true
 		- IOC 和 DI 描述的是同一件事情，但是出发点不一样，IOC 从对象角度出发，将对象的控制交给了容器，DI 从容器角度出发，为相互依赖的对象进行依赖的注入
 	- Bean 容器管理实现
-		-
+		- xml 配置 Bean 生成参数
+		- Factory 读取 xml 配置
 - AOP
   id:: 616eb420-adf0-47f7-b0a9-01767e8cb189
   collapsed:: true
