@@ -16,5 +16,7 @@
 		  ```
 - route
 	- 查看路由
-		-
+		- ```bash
+		  route -n
+		  ```
 - traceroute
