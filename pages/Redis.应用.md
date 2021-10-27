@@ -1,0 +1,26 @@
+title:: Redis/应用
+
+- [[Redis/数据结构/String]]
+	- 缓存
+		- 存储 token，字典 Dic 等
+		- 缓存图片，网页
+			- 读成二进制后再存储
+	- [[分布式锁]]
+	- 文章信息存储
+	- 文章长度和文章预览功能
+	- 日志存储
+	- ID 生成器
+	- 计数器
+	- 限速器
+- [[Redis/数据结构/HyperLogLog]]
+	- 优化唯一计数器
+	- 检测重复信息
+	- 实现周/月/年计数器
+- [[Redis/Hash]]
+- [[Redis/List]]
+- [[Redis/Set]]
+- [[Redis/SortedSet]]
+- [[Redis/HyperLogLog]]
+- [[Redis/BitMap]]
+- [[Redis/GEO]]
+- [[Redis/Stream]]
