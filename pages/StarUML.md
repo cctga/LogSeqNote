@@ -1,0 +1,5 @@
+- UML 图绘制软件
+-
+- 层级为 系统，模块，图表
+- ![image.png](../assets/image_1635578031898_0.png){:height 242, :width 240}
+- 画一个流程图，使用 Sequence Diagram

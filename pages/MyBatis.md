@@ -1,1 +1,7 @@
+- MyBatis 是什么
+	- 一个 Dao 层的操作框架
+	- 对 [[JDBC]] 的封装，解决了其 ((617b8df0-fdf4-4f56-8dff-f7c3618762f3))
+	- 半自动的 ORM，做到了一部分自动 ORM，但是自己书写 Sql
+- 框架结构
+	-
 - [[TypeHandler]]

@@ -1,0 +1,34 @@
+- 元注解
+	- @Target(ElementType.TYPE)
+		- > 用于指定注解使用的位置
+		- CONSTRUCTOR
+			- 用于描述构造器
+		- FIELD
+			- 用于描述域即类成员变量
+		- LOCAL_VARIABLE
+			- 用于描述局部变量
+		- METHOD
+			- 用于描述方法
+		- PACKAGE
+			- 用于描述包
+		- PARAMETER
+			- 用于描述参数
+		- TYPE
+			- 用于描述类、接口(包括注解类型) 或enum声明
+		- TYPE_PARAMETER `version 1.8`
+			- 描述类、接口或enum参数的声明
+		- TYPE_USE `version 1.8`
+			- 描述一种类、接口或enum的使用声明
+	- @Retention(RetentionPolicy.RUNTIME)
+		- > 用于指定注解的生命周期
+		- SOURCE
+			- 在源文件中有效（即源文件保留）
+		- CLASS
+			- 在 class 文件中有效（即class保留）
+		- RUNTIME
+			- 在运行时有效（即运行时保留）
+	- @Inherited
+		- 一个标记注解，表示被注解是否会被继承
+		- 如注解 A 有 @Inherited，而 class C 被注解 A 标记了，则 class C 的子类会继承注解 A
+	- @Documented
+		- 一个标记注解，表示是否参与文档生成

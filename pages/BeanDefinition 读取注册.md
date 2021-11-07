@@ -1,0 +1,3 @@
+- ![image.png](../assets/image_1635610600963_0.png)
+-
+- 这里如果在 applicationContext.xml 中不配置 Bean ，那后几步就可能不会存在

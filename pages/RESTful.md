@@ -1,0 +1,8 @@
+- 一种 web 请求的编程风格
+- 用 uri 标定资源
+	- `http://localhost:8080/user/3`
+- 用请求类型表示操作类型
+	- GET 获取
+	- POST 新增
+	- PUT 更新
+	- DELETE 删除

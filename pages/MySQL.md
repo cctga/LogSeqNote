@@ -26,9 +26,39 @@
 			      前两者都确定了之后，数据库还要确定排序规则
 			      `utf8_general_ci`  `utf8mb4_0900_ai_ci`
 - 小知识
-  collapsed:: true
 	- 插入或更新 [🔗](https://baijiahao.baidu.com/s?id=1644358136491778500&wfr=spider&for=pc)
 		- ignore
 		- on duplicate key update
 		- insert...select...where not exists
 		- replace into
+	- 备份和还原
+		- 备份
+			- `--all-databases` 备份所有库
+			- ```bash
+			  mysqldump -uroot -p --all-databases > dump.db
+			  ```
+			- 备份一个库
+			- ```bash
+			  mysqldump -uroot -p dbname > dump.db
+			  ```
+			- `--ignore-table=dbname.table` 来排除一些表，可以多个
+			- ```bash
+			  mysqldump -uroot -p dbname --ignore-table=dbname.table --ignore-table=dbname.table2 > dump.db
+			  ```
+			- 备份一个库中指定的表
+			- ```bash
+			  
+			  mysqldump -uroot -p dbname table1 table2 > dump.db
+			  ```
+		- 还原
+			- 如果没有指定的库需要手动创建
+			- mysql 命令来还原
+			- ```bash
+			  mysqladmin -uroot -p create db_name 
+			  mysql -uroot -p  db_name < /backup/mysqldump/db_name.db
+			  ```
+			- mysql 中的 source 来还原，即先登录 mysql，然后用 source 命令
+			- ```bash
+			  use dbname;
+			  source /root/dump.db
+			  ```

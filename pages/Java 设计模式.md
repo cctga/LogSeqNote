@@ -2,8 +2,8 @@
   card-last-interval:: -1
   card-repeats:: 1
   card-ease-factor:: 2.5
-  card-next-schedule:: 2021-10-24T16:00:00.000Z
-  card-last-reviewed:: 2021-10-24T12:14:13.178Z
+  card-next-schedule:: 2021-10-30T16:00:00.000Z
+  card-last-reviewed:: 2021-10-30T06:42:06.269Z
   card-last-score:: 1
 	- 单一职责原则
 	  card-last-interval:: -1
@@ -23,8 +23,8 @@
   card-last-interval:: -1
   card-repeats:: 1
   card-ease-factor:: 2.5
-  card-next-schedule:: 2021-10-24T16:00:00.000Z
-  card-last-reviewed:: 2021-10-24T12:14:24.713Z
+  card-next-schedule:: 2021-10-30T16:00:00.000Z
+  card-last-reviewed:: 2021-10-30T06:42:20.225Z
   card-last-score:: 1
 	- 单例模式
 	  collapsed:: true
@@ -68,8 +68,8 @@
   card-last-interval:: -1
   card-repeats:: 1
   card-ease-factor:: 2.5
-  card-next-schedule:: 2021-10-24T16:00:00.000Z
-  card-last-reviewed:: 2021-10-24T12:14:28.344Z
+  card-next-schedule:: 2021-10-30T16:00:00.000Z
+  card-last-reviewed:: 2021-10-30T06:42:29.388Z
   card-last-score:: 1
 	- 代理模式
 		- 静态代理
@@ -114,8 +114,8 @@
   card-last-interval:: -1
   card-repeats:: 1
   card-ease-factor:: 2.5
-  card-next-schedule:: 2021-10-24T16:00:00.000Z
-  card-last-reviewed:: 2021-10-24T12:14:26.910Z
+  card-next-schedule:: 2021-10-30T16:00:00.000Z
+  card-last-reviewed:: 2021-10-30T06:42:23.295Z
   card-last-score:: 1
 	- 观察者模式
 	- 中介者模式

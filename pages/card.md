@@ -1,0 +1,5 @@
+- {{cards [[Java 设计模式]] }}
+- {{cards [[英文单词]]}}
+	- Summary: 6 items, 6 review counts [[2021-10-30]]
+		- Remembered:   0 (0%)
+		- Forgotten :   6 (100%)

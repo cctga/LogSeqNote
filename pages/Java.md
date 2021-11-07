@@ -1,9 +1,19 @@
 - 开发工具
 	- [[IDEA]]
 - [[Java 设计模式]]
--
 - [[Java 多线程]]
--
 - [[Java 类库]]
--
-- [[JVM]]
+- [[Java 开发框架]]
+- [[Java JVM]]
+- [[Java 注解]]
+- 构成
+  collapsed:: true
+	- Java 语言
+	- Java 平台
+		- [[Java JVM]]
+		- Java JDK
+			- [[JavaSE]] 为 Java 的基础包
+			- [[JavaEE]] 扩展了 [[JaveSE]]
+			- [[JavaFX]]
+			- [[JavaME]]
+- [[小问题]]

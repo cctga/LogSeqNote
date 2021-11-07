@@ -93,6 +93,11 @@
 		- `auto` 表示开机启动网卡
 		- `dns-nameservers` 配置需要依靠 resolve.conf 来生效，需要有 `resolvconf` 这个软件，如果没有，需要安装
 			- 两个配置文件 `/etc/resolve.conf` 和 `/etc/resolvconf/resolv.conf.d/base`
+				- 主要就是配置 nameserver，其他的配置不说了
+				  ```ini
+				  nameserver 114.114.114.114
+				  nameserver 8.8.8.8
+				  ```
 			- 其中 前者 表示当前使用的 DNS 地址(配置 dns-nameservers 后，配置复制到这个文件中生效)，重启后会失效，所以永久生效要在 后者 中配置
 			- 配置完后重启 `service resolvconf restart`
 	- 使配置生效
@@ -126,8 +131,8 @@
 		  10月 26 16:59:11 kljc-28 systemd[1]: networking.service: Failed with result 'exit-code'.
 		  ```
 		- `networking.service` 服务起不来
-		  collapsed:: true
 			- 配置 network-manager ,配置文件在 `/etc/NetworkManager/NetworkManager.conf`
 			- 将配置中的 managed 项，配置成 `managed=true`
 			- 重启 network-manager ：`sudo service network-manager restart`
+			- ...不灵的话重启一下吧
 		-
