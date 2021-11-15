@@ -1,6 +1,6 @@
 - 小问题
-  collapsed:: true
 	- 编码问题
+	  collapsed:: true
 		- 从一个报错开始：
 		  ```sql
 		  SELECT count(0) FROM ms_city WHERE city_name LIKE concat('%', '😊', '%')
@@ -25,6 +25,15 @@
 			  3. 排序规则（collation）
 			      前两者都确定了之后，数据库还要确定排序规则
 			      `utf8_general_ci`  `utf8mb4_0900_ai_ci`
+	- 大写表名找不到表
+		- 加上配置
+			- 注意：mysql 服务配置位置为：
+				- `/etc/mysql/mysql.conf.d/mysqld.cnf`
+			- ```ini
+			  lower_case_table_names=1
+			  ```
+		- 重启 mysql 服务
+			- `service mysql restart`
 - 小知识
 	- 插入或更新 [🔗](https://baijiahao.baidu.com/s?id=1644358136491778500&wfr=spider&for=pc)
 		- ignore

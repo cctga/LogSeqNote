@@ -5,3 +5,4 @@
 - 框架结构
 	-
 - [[TypeHandler]]
+- [[mybatis 批处理]]

@@ -1,6 +1,5 @@
 - @Autowired
   id:: 16e999fd-8479-457f-86aa-d2b262180114
-  collapsed:: true
 	- 根据类型注入，如果有相同类型的多个 Bean，可以配合 ((46a6510a-00e5-413c-9e48-17ea3904e0ff))
 - @Resource
   id:: ff88a13e-0451-4886-b74a-5ba170a9d133

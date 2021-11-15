@@ -1,7 +1,6 @@
 alias:: Spring Framework
 
 - Spring 优势
-  collapsed:: true
 	- 解耦，简化（单例，文件解析）
 	- AOP
 	- 声明式事务支持 `@Transactional`
@@ -18,3 +17,9 @@ alias:: Spring Framework
 - [[声明式事务控制]]
 - [[Spring 注解]]
 - [[Spring 的包及其功能]]
+-
+- 其他 ---
+- [[SpringMVC]]
+-
+-
+- [[SSM 整合]]

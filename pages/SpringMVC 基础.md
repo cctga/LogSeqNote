@@ -1,13 +1,12 @@
 - 请求流程
+  id:: 6187c41a-528f-4149-a5e0-1652ea0a59bf
 	- ![image.png](../assets/image_1636273980128_0.png){:height 410, :width 592}
 - 基础配置
-  collapsed:: true
 	- 配置 DispatcherServlet 前端控制器 在 web.xml 中配置
 	  ```xml
 	  <servlet>
 	    <servlet-name>springmvc</servlet-name>
 	    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-	    
 	  </servlet>
 	  ```
 	- 配置前端控制器拦截路径 在 web.xml 中配置
@@ -18,10 +17,8 @@
 	  </servlet-mapping>
 	  ```
 		- 路径典型配置
-			- `/`  最低匹配级别，会优先使用其他配置（可以有多个 url-pattern）或使用默认的配置，但是会出现静态资源访问不了的问题
-			  collapsed:: true
+			- `/`  最低匹配级别，会优先使用其他配置（可以有多个 url-pattern）或使用默认的配置，但是会出现静态资源访问不了的问题，不过现在都前后端分离了，不需要访问静态资源
 				- 静态资源访问不了的问题原因
-				  collapsed:: true
 				  原因是 tomcat 有一个相同的默认配置来处理静态资源，我们这边做相同的配置会将其覆盖，但是我们的 springmvc 又不处理静态资源，所以会导致静态资源无法访问
 				- 问题解决 在 springmvc.xml 中添加一些配置
 					- 重新配置使用默认配置
@@ -31,6 +28,7 @@
 					  <mvc:default-servlet-handler/>
 					  ```
 					- 为 springMVC 配置静态资源处理
+					  id:: 6187c41a-7640-4c72-b4fa-5897bce4c4ea
 					  ```xml
 					  <mvc:resources mapping="/**" location="/"/>
 					  
@@ -74,16 +72,27 @@
 	  </servlet>
 	  ```
 - 九大组件
-  collapsed:: true
+  id:: 6187c41a-d1cc-461f-a342-b9a0ad15dc19
 	- HandlerMapping 处理器映射器
 		- 管理着所有的 Handler 和 HandlerInterceptor
+		- 默认 MVC 使用两种
+			- BeanNameUrlHandlerMapping
+			- BeanNameUrlHandlerMapping
 	- HandlerAdapter 处理器适配器
 		- 负责执行 Handler 和 HandlerInterceptor 并返回执行结果（ModelAndView）
+		- 默认 MVC 使用三种
+		  id:: 618be94e-f0c1-4773-a1b3-34f19e6e5200
+			- SimpleControllerHandlerAdapter
+				- 那些通过继承 Controller 而生成的 Handler 使用
+			- HttpRequestHandlerAdapter
+			- RequestMappingHandlerAdapter
 	- HandlerExceptionResolver 处理器异常解析器
 		- 找到异常处理器执行并返回结果（ModelAndView）
 	- ViewResolver 视图解析器
+		- 默认实现为 `InternalResourceViewResolver`
 		- 找到视图文件，如 html，jsp 等，然后返回 View 对象
 	- RequestToViewNameTranslator 请求转换为视图名称
+	  id:: 6187c41a-1723-4b7e-9277-8b9f7888051c
 		- 有的 Handler 没有返回视图地址，这个组件用来处理这种缺省的情况，会将请求路径作为视图名称，供 ViewResolver 使用来解析视图，但往往找不到😂
 	- LocateResolver
 		- 支持国际化，会从请求从解析出 Locale，比如中国是 zh-CN
@@ -105,7 +114,6 @@
 	- ModelAndView
 	- Model，ModelMap，Map <- BindingAwareModelMap
 - 参数绑定
-  collapsed:: true
 	- 简单数据类型
 		- 尽量使用包装类，对于 Boolean 来说，只接受四个值，true，false，0，1
 	- 简单 Bean
@@ -123,9 +131,7 @@
 		  }
 		  ```
 - 参数转换器的使用
-  collapsed:: true
 	- 创建一个类型转换器，实现 [Converter](org.springframework.core.convert.converter.Converter) 接口
-	  collapsed:: true
 		- ```java
 		  public class DateConverter implements Converter<String, Date> {
 		    final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -159,7 +165,6 @@
 			  <mvc:annotation-driven conversion-service="conversionServiceBean"/>
 			  ```
 - [[RESTful]] 的支持
-  collapsed:: true
 	- 路径参数的支持 @PathVariable
 	- 请求方式的匹配 @RequestMappding(method=?)
 	- ```java
@@ -186,11 +191,35 @@
 	    <url-pattern>/*</url-pattern>
 	  </filter-mapping>
 	  ```
-- 拦截器
-  collapsed:: true
-	- 拦截器是属于 tomcat 的内容，过滤器是 springmvc 的内容
+- 过滤器
+  id:: 6187c41a-7b82-4656-b0df-aa6d217f4951
+	- 过滤器是属于 tomcat 的内容，过滤器是 springmvc 的内容
 	- 在 web.xml 中配置
 	- {{embed ((6187bea2-d10c-444c-a48a-92b38d066177))}}
 - Ajax json 交互
-	- @RequestBody
-	- @ResponseBody
+	- ((6187c818-ca36-4222-a52f-be386bf07804))
+	- ((6187c838-d407-4aab-930c-74068078276d))
+- 重定向
+  id:: 61891997-8232-436b-849f-18638154b775
+	- 为 View 添加前缀 `redirect:` SpringMVC 就会完成简单的重定向
+		- 简单的 Get 重定向
+		- 底层就是使用 RedirectView 视图组件进行重定向的
+	- 使用 RedirectView 进行复杂的重定向
+		- 悲剧，不知道怎么用，再说吧...
+		- ```java
+		  /**  
+		    * 请求进行重定向  
+		    */  
+		  @RequestMapping(value = "postPayAmount", method = RequestMethod.GET)   
+		  public RedirectView postPayAmount(HttpSession session,ModelMap map) {   
+		    return new RedirectView(WsUrlConf.URI_PAY,true,false,false);//最后的参数为false代表以post方式提交请求   
+		  }  
+		  
+		  // 如果有数据需要携带可以使用
+		  
+		  return new ModelAndView(new RedirectView("xxx.do"), map);  
+		  ```
+- 转发
+	- 为 View 添加前缀 `forward:`
+	- 底层使用 `InternalResourceView` 视图组件进行转发
+-
