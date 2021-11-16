@@ -20,6 +20,6 @@ alias:: Spring Framework
 -
 - 其他 ---
 - [[SpringMVC]]
--
+- [[Spring Data JPA]]
 -
 - [[SSM 整合]]

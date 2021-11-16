@@ -1,0 +1,14 @@
+- 基于 JPA 规范，简化 jdbc 的使用，作用和 [[MyBatis]] 一样
+	- 使用方式和底层机制不同
+	- 很多时候不需要使用者使用 SQL 语句
+- 和 JPA 规范，Hibernate 的关系
+	- 最初出现了 JDBC
+	- 由 JDBC 出现了 ORM 的思想
+	- 依据 ORM ，出现了 Hibernate 等完全 ORM 的框架
+	- Sun 公司总结了 Hibernate 这些框架，抽取出了 JPA 规范
+	- Spring Data JPA 封装了 JPA 规范，优化了操作，实现默认选择的是 Hibernate
+- 基础使用
+	- 配置 Maven 编译行为
+		- ((61926a19-4993-4f9b-af42-c2aff841d20f))
+	- 引入 Jar 包
+		-
