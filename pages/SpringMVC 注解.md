@@ -151,4 +151,35 @@
 	- 作用
 		- 类型转换
 		- 参数绑定
+			- ```html
+			  <form action="/testBean" method="post">
+			    name: <input type="text" name="u.name"> <br>
+			    age: <input type="text" name="u.age"> <br>
+			    name: <input type="text" name="s.name"> <br>
+			    age: <input type="text" name="s.age"> <br>
+			    <input type="submit">
+			  </form>
+			  ```
+			- ```java
+			  @InitBinder("user")
+			  public void init1(WebDataBinder binder) {
+			    binder.setFieldDefaultPrefix("u.");
+			  }
+			  
+			  @InitBinder("stu")
+			  public void init2(WebDataBinder binder) {
+			    binder.setFieldDefaultPrefix("s.");
+			  }
+			  
+			  @RequestMapping("/testBean")
+			  public ModelAndView testBean(User user, @ModelAttribute("stu") Student stu) {
+			    System.out.println(stu);
+			    System.out.println(user);
+			    String viewName = "success";
+			    ModelAndView modelAndView = new ModelAndView(viewName);
+			    modelAndView.addObject("user", user);
+			    modelAndView.addObject("student", stu);
+			    return modelAndView;
+			  }
+			  ```
 -

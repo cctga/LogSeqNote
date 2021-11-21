@@ -20,10 +20,40 @@
   id:: 47abb64b-9663-4043-bbe0-2ce9881a32e9
   collapsed:: true
 	- 注入 SpringEL 的值
+	- 相比于 ((16e999fd-8479-457f-86aa-d2b262180114)) 或 ((ff88a13e-0451-4886-b74a-5ba170a9d133)) 更加强大，允许使用 SpringEL 表达式
+	- 下面是 `#{}` 和 `${}` 两者的用法
+	- `#{}` 使用 springEL 表达式
+	- `${}` 简单的获取 properties 中的内容
 	- collapsed:: true
 	  ```java
+	  // 获取 properties 配置文件中的值
 	  @Value("${jdbc.dirver}")
 	  private String driverClassName;
+	  ```
+	- ```java
+	  // 获取 Bean 的属性
+	  @Value("#{user.name}")
+	  private String name;
+	  
+	  // 获取一个直接量
+	  @Value("#{1}")
+	  private int number;
+	  
+	  // 调用 bean 的方法
+	  @Value("#{user.getLostLife()}")
+	  private int lostLife;
+	  
+	  // 使用运算符
+	  @Value("#{1+2}")
+	  private int sum;
+	  
+	  // 三元表达式
+	  @Value("#{ok?1:2}")
+	  private int times;
+	  
+	  // 链式调用，？判断是否为 null，防止空指针
+	  @Value("#{user.getMoney()?.getNumber()}")
+	  private int money;
 	  ```
 - @Scope
   collapsed:: true
@@ -67,7 +97,6 @@
 	- 配置类注解，也是一个 @Component，多了一些参数
 	- 在纯注解 IOC 中作为容器的启动项，入口
 - @Import
-  collapsed:: true
 	- 导入其他的配置类
 	- collapsed:: true
 	  ```java
@@ -80,6 +109,8 @@
 	    ...
 	  }
 	  ```
+- @ImportResource
+	- 引入一个或多个配置文件
 - @ComponentScan
   id:: 11c084cf-03ed-4d67-81a5-d582d4da1245
   collapsed:: true
@@ -225,4 +256,5 @@
   collapsed:: true
 	- Spring 支持[[单元测试]]的注解，需要配合 ((b975c2d7-9de9-47cb-b555-5d3f4abfef2b)) 或 ((138244a0-0488-4ee4-a579-c601756696bc)) 使用
 	- 用来指定 Sping 配置的位置，可以是 xml 或 注解
+-
 - [[SpringMVC 注解]]

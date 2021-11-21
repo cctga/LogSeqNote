@@ -36,11 +36,13 @@
 			- `service mysql restart`
 - 小知识
 	- 插入或更新 [🔗](https://baijiahao.baidu.com/s?id=1644358136491778500&wfr=spider&for=pc)
+	  collapsed:: true
 		- ignore
 		- on duplicate key update
 		- insert...select...where not exists
 		- replace into
 	- 备份和还原
+	  collapsed:: true
 		- 备份
 			- `--all-databases` 备份所有库
 			- ```bash
@@ -71,3 +73,31 @@
 			  use dbname;
 			  source /root/dump.db
 			  ```
+	- 查看索引
+	  collapsed:: true
+		- `show index from <table> from [<database>]`
+	- `escape` 关键词
+	  collapsed:: true
+		- 指定字符替代 `like` 查询中的转译字符 `\`，可以指定多个
+			- `%` 匹配若干个字符
+			- `_` 匹配单个字符
+		- 使用 `a` 来作为转译字符
+		  
+		  ```sql
+		  SELECT * FROM user WHERE name LIKE "a%_" ESCAPE "a"
+		  
+		  # 和以下查询相同
+		  
+		  SELECT * FROM user WHERE name LIKE "\%_"
+		  ```
+	- 时间戳和时间互转
+		- ```sql
+		  -- 日期字符串转时间戳，10位，数据库存储的是13位
+		  select UNIX_TIMESTAMP('2019-09-01 00:00:00');
+		  -- 时间戳转日期
+		  select FROM_UNIXTIME(1567267200, '%Y-%m-%d %H:%i:%s')
+		  ```
+		-
+- [[MySQL 8.0]]
+-
+-

@@ -1,3 +1,4 @@
+- [Spring各个jar包作用](https://www.cnblogs.com/zz-1q/p/10350265.html)
 - spring-beans
   collapsed:: true
 	- IOC 管理器，注册生成 Bean，以及 DI，包含 xml 配置和 注解内容
@@ -25,6 +26,12 @@
 		    <property name="password" value="${jdbc.password}"/>
 		  </bean>
 		  ```
+- spring-context-support
+  collapsed:: true
+	- context 的支持包，支持 cache 等内容
+	- >包含支持缓存Cache（ehcache）、JCA、JMX、 邮件服务（Java Mail、COS Mail）、任务计划Scheduling（Timer、Quartz）方面的类。
+	  > 以前的版本中应该是这个：`spring-support.jar` 这个jar 文件包含支持UI模版（Velocity，FreeMarker，JasperReports），邮件服务，脚本服务(JRuby)，缓存Cache（EHCache），任务计划Scheduling（uartz）方面的类。 
+	  >外部依赖spring-context, (spring-jdbc, Velocity,FreeMarker, JasperReports, BSH, Groovy,JRuby, Quartz, EHCache)
 - spring-web
   collapsed:: true
 	- web 项目支持模块
@@ -53,3 +60,4 @@
 - spring-webmvc
 	- Spring MVC 功能包 [[SpringMVC]]
 	- 很上层的包，依赖 beans， context，web 等
+-

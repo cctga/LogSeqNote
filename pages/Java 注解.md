@@ -1,5 +1,6 @@
 - 元注解
 	- @Target(ElementType.TYPE)
+	  collapsed:: true
 		- > 用于指定注解使用的位置
 		- CONSTRUCTOR
 			- 用于描述构造器
@@ -20,6 +21,7 @@
 		- TYPE_USE `version 1.8`
 			- 描述一种类、接口或enum的使用声明
 	- @Retention(RetentionPolicy.RUNTIME)
+	  collapsed:: true
 		- > 用于指定注解的生命周期
 		- SOURCE
 			- 在源文件中有效（即源文件保留）

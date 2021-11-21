@@ -100,13 +100,13 @@
 		  LocaleResolver用于从请求中解析出Locale,比如中国Locale是zh-CN,用来表示一个区域。这个组件也
 		  是i18n的基础。
 	- ThemeResolver 主题解析器
-		- ThemeResolver组件是用来解析主题的。主题是样式、图片及它们所形成的显示效果的集合。Spring MVC中一套主题对应一个properties文件，里面存放着与当前主题相关的所有资源，如图片、CSS样式等。创建主题非常简单，只需准备好资源，然后新建一个”主 题名.properties"并将资源设置进去，放在classpath下，之后便可以在页面中使用了。SpringMVC中与 主题相关的类有ThemeResolver. ThemeSource和Theme。ThemeResolver 负责从请求中解析出主题名，ThemeSource根据主 题名找到具体的主题，其抽象也就是Theme，可以通过Theme来获取主题和具体的资源。
+		- > ThemeResolver组件是用来解析主题的。主题是样式、图片及它们所形成的显示效果的集合。Spring MVC中一套主题对应一个properties文件，里面存放着与当前主题相关的所有资源，如图片、CSS样式等。创建主题非常简单，只需准备好资源，然后新建一个”主 题名.properties"并将资源设置进去，放在classpath下，之后便可以在页面中使用了。SpringMVC中与 主题相关的类有ThemeResolver. ThemeSource和Theme。ThemeResolver 负责从请求中解析出主题名，ThemeSource根据主 题名找到具体的主题，其抽象也就是Theme，可以通过Theme来获取主题和具体的资源。
 	- MultipartResolver 文件上传功能
 		- 用于上传请求，会将普通请求包装成 MultipartHttpServletRequest ，然后使用 getFile 方法就能获取文件
 		- 就是封装普通请求，使其拥有文件上传的功能
 	- FlashMapManager
 		- 用来管理 FlashMap，用于重定向时的参数传递
-		- FlashMap用于重定向时的参数传递，比如在处理用户订单时候，为了避免重复提交,可以处理完post请求之后重定向到一个get请求，这个get请求可以用来 显示订单详情之类的信息。这样做虽然可以规避用户重新提交订单的问题，但是在这个页面上要显示订单的信息，这些数据从哪里来获得呢?因为重定向时么有传递参数这一功能的，如果不想把参数写进URL (不推荐)，那么就可以通过FlashMap来传递。只需要在重定向之前将要传递的数据写入请求(可以通过ServletRequestAttributes getRequest()方法获得)的属性OUTPUT_ FLASH_ _MAP. ATTRIBUTE中，这样在重定向之后的Handler中Spring就会自动将其设置到Model中，在显示订单信息的页面上就可以直接从Model中获取数据。FlashMapManager 就是用来管理FalshMap的。
+		- > FlashMap用于重定向时的参数传递，比如在处理用户订单时候，为了避免重复提交,可以处理完post请求之后重定向到一个get请求，这个get请求可以用来 显示订单详情之类的信息。这样做虽然可以规避用户重新提交订单的问题，但是在这个页面上要显示订单的信息，这些数据从哪里来获得呢?因为重定向时么有传递参数这一功能的，如果不想把参数写进URL (不推荐)，那么就可以通过FlashMap来传递。只需要在重定向之前将要传递的数据写入请求(可以通过ServletRequestAttributes getRequest()方法获得)的属性OUTPUT_ FLASH_ _MAP. ATTRIBUTE中，这样在重定向之后的Handler中Spring就会自动将其设置到Model中，在显示订单信息的页面上就可以直接从Model中获取数据。FlashMapManager 就是用来管理FalshMap的。
 - Handler 中会自动注入的一些对象
 	- HttpServletRequest
 	- HttpServletResponse
