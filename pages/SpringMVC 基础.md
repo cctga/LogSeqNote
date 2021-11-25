@@ -193,7 +193,7 @@
 	  ```
 - 过滤器
   id:: 6187c41a-7b82-4656-b0df-aa6d217f4951
-	- 过滤器是属于 tomcat 的内容，过滤器是 springmvc 的内容
+	- 过滤器是属于 tomcat 的内容，拦截器是 springmvc 的内容
 	- 在 web.xml 中配置
 	- {{embed ((6187bea2-d10c-444c-a48a-92b38d066177))}}
 - Ajax json 交互

@@ -8,6 +8,7 @@ alias:: Spring Framework
 	- 集成优秀框架
 	- 降低 JavaEE API 的使用难度
 	- 优秀的源码
+	- 从 Spring 3.0 开始就可以使用 JavaConfig，而不需要 applicationContext.xml 配置
 - 核心结构
 	-
 - [[Spring IOC]]
@@ -21,5 +22,7 @@ alias:: Spring Framework
 - 其他 ---
 - [[SpringMVC]]
 - [[Spring Data JPA]]
+- [[Spring Boot]]
 -
 - [[SSM 整合]]
+-

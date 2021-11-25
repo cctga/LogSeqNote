@@ -1,4 +1,84 @@
 - @RequestMapping
+  collapsed:: true
+	- 指定 Handler，可用在 **方法** 和 **类** 上
+	- 参数
+		- name
+		  collapsed:: true
+			- 为 Handler 取一个名称
+		- value（alias path）， method
+		  collapsed:: true
+			- value：请求路径，可以指定为 `URI Template` 模式
+			- method：请求的类型，GET，PUT，POST，DELETE 等
+		- consumes， produces
+			- consumes：指定处理请求的提交内容（content-type）类型，如 application/json，text/html
+				- ```java
+				  // 只接收 content-type=application/json 的请求
+				  // 需要和 @RequestBody 一起使用，否则无法注入
+				  @RequestMapping(value = "/handle07", 
+				                  consumes = "application/json")
+				  public User handle07(@RequestBody User user) {
+				    user.setName("张三丰");
+				    return user;
+				  }
+				  ```
+			- produces：指定返回的内容类型，仅当请求头中的类型（Accept）中包含该指定类型才返回
+				- ```java
+				  @RequestMapping(value = "/pets/{petId}", 
+				                  method = RequestMethod.GET, 
+				                  produces = "application/json")
+				  // 方法仅处理request请求中Accept头中包含了"application/json"的请求，
+				  // 同时暗示了返回的内容类型为application/json
+				  @ResponseBody
+				  public Pet getPet(@PathVariable String petId, Model model) {    
+				      // implementation omitted
+				  }
+				  ```
+		- params， headers
+			- params：必须包含某些参数值才处理
+				- ```java
+				  @RequestMapping(value = "/pets/{petId}", 
+				                  method = RequestMethod.GET, 
+				                  params = "myParam=myValue")
+				  // 仅处理请求中包含了名为“myParam”，值为“myValue”的请求
+				  public void findPet(@PathVariable String ownerId, 
+				                      @PathVariable String petId, 
+				                      Model model) {    
+				    // implementation omitted
+				  }
+				  ```
+			- headers：必须包含某些 header 值才处理
+				- ```java
+				  @RequestMapping(value = "/pets", 
+				                  method = RequestMethod.GET, 
+				                  headers="Referer=http://www.ifeng.com/")
+				  // 仅处理request的header中包含了指定 “Refer” 请求头
+				  // 并且对应值为 “http://www.ifeng.com/” 的请求
+				  public void findPet(@PathVariable String ownerId, 
+				                      @PathVariable String petId, 
+				                      Model model) {    
+				    // implementation omitted
+				  }
+				  ```
+	- url 指定可以是普通 url，也可以是 URI Template（包括`变量`和`正则`）
+	  collapsed:: true
+		- 正则表达式 `{name: 正则}`
+			- ```java
+			  
+			  @RequestMapping("/spring-web/{symbolicName:[a-z-]+}-{version:\d\.\d\.\d}.{extension:\.[a-z]}")
+			  public void handle(@PathVariable String version, @PathVariable String extension) {    
+			    // ...
+			  }
+			  ```
+		- 变量 `{name}`
+			- ```java
+			  
+			  @RequestMapping(value="/owners/{ownerId}", method=RequestMethod.GET)
+			  public String findOwner(@PathVariable String ownerId, Model model) {
+			    Owner owner = ownerService.findOwner(ownerId);  
+			    model.addAttribute("owner", owner);  
+			    return "displayOwner"; 
+			  }
+			  ```
 - @GetMapping
 - @PostMapping
 - @DeleteMapping
@@ -40,12 +120,17 @@
 		    }
 		  }
 		  ```
-	- 全局，在 ((6187f46b-c19f-4c4e-b4f5-2d38d1a1075c)) 注解类中配置
+	- > 全局，在 ((6187f46b-c19f-4c4e-b4f5-2d38d1a1075c)) 注解类中配置
 	- 局部，在某个 Controller 类中配置，单个 Controller 生效
 - @ControllerAdvice
   id:: 6187f46b-c19f-4c4e-b4f5-2d38d1a1075c
-  collapsed:: true
-	- 全局异常处理
+	- 一个增强的 Controller。使用这个 Controller ，可以实现三个方面的功能：
+		- 全局异常处理
+			- ((6187f3c8-c7ae-4f4f-a381-8e0cc88b3b25))
+		- 全局数据绑定
+			- ((6187f8e6-0ec3-4344-bec3-c2d1869a2a0d))
+		- 全局数据预处理
+			- ((618d3166-b429-4c5b-92ec-ee9046e80053))
 	- collapsed:: true
 	  ```java
 	  // 可以让我们优雅的捕获所有Controller对象handler方法抛出的异常
@@ -79,7 +164,7 @@
 	- 可以用在 **方法** 上和 **方法的参数** 上
 	  collapsed:: true
 	- collapsed:: true
-	  > 在 Model 中添加和获取数据
+	  > 在 Model 中添加和获取数据，配合 ((6187f46b-c19f-4c4e-b4f5-2d38d1a1075c)) 进行全局数据绑定
 	- 用在方法上，添加数据
 	  collapsed:: true
 		- 用在 HandlerAdaptor 上
@@ -146,9 +231,12 @@
 		  }
 		  ```
 - @InitBinder
+  id:: 618d3166-b429-4c5b-92ec-ee9046e80053
+	- > 配合 ((6187f46b-c19f-4c4e-b4f5-2d38d1a1075c)) 进行全局数据预处理配置
 	- 用在含有 @Controller 类中的 **方法** 上，作用范围为当前 Controller
 	- 执行和 @ModelAttribute 类似，都是在 Handler 执行前执行当前 Controller 中的所有 InitBinder
 	- 作用
+	  collapsed:: true
 		- 类型转换
 		- 参数绑定
 			- ```html
@@ -182,4 +270,44 @@
 			    return modelAndView;
 			  }
 			  ```
+	- 例子
+		- 将值为空字符串的参数转为 null
+			- ```java
+			  @ControllerAdvice
+			  public class GlobalControllerAdiviceController {
+			    //WebDataBinder是用来绑定请求参数到指定的属性编辑器，可以继承WebBindingInitializer
+			    //来实现一个全部controller共享的dataBiner Java代码
+			    @InitBinder
+			    public void dataBind(WebDataBinder binder) {
+			      ///注册
+			      binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
+			    }
+			  }
+			  ```
+			- 以下来处理 post json 报文
+				- ```java
+				  @Bean
+				  public Jackson2ObjectMapperBuilderCustomizer jackson2ObjectMapperBuilderCustomizer() {
+				    return new Jackson2ObjectMapperBuilderCustomizer() {
+				      @Override
+				      public void customize(Jackson2ObjectMapperBuilder jacksonObjectMapperBuilder) {
+				        jacksonObjectMapperBuilder
+				          .deserializerByType(String.class, new StdScalarDeserializer<String>(String.class) {
+				            @Override
+				            public String deserialize(JsonParser jsonParser, DeserializationContext ctx)
+				              throws IOException {
+				              // 重点在这儿:如果为空白则返回null
+				              String value = jsonParser.getValueAsString();
+				              if (value == null || "".equals(value.trim())) {
+				                return null;
+				              }
+				              return value;
+				            }
+				          });
+				      }
+				    };
+				  }
+				  ```
+-
+-
 -

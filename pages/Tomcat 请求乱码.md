@@ -1,6 +1,6 @@
 - 解决 Post 乱码
   id:: 6187bea2-d10c-444c-a48a-92b38d066177
-	- 为 tomcat 添加一个 filter 过滤器，使用 Springmvc
+	- 为 tomcat 添加一个 filter 过滤器
 	- ```xml
 	  <!--springmvc提供的针对post请求的编码过滤器-->
 	  <filter>

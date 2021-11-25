@@ -1,0 +1,7 @@
+- 依赖管理
+	- 不用指定 jar 包的版本号，如 spring-boot-starter-log4j2 版本
+		- 在父依赖（spring-boot-dependencies）中使用 dependencyManagement 标签进行了版本管理
+	- 不用引入相关的 jar 包，如 tomcat 相关 jar 包
+		- 在各个 starter 中进行了 jar 的^^直接依赖^^，利用 maven 依赖传递的特性，相当于当前项目也已经引入了
+- 自动配置
+	-

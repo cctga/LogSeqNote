@@ -1,5 +1,4 @@
 - 监听器、过滤器和拦截器
-  collapsed:: true
 	- 过滤器 Filter #tomcat
 		- 属于 tomcat ，JavaEE 的内容
 		- 在 Servlet 之前过滤 Request，可以配置成 `/*` 过滤所有内容，包括静态资源
@@ -11,7 +10,6 @@
 			- 初始化 ((2275c93b-96cf-454a-ae61-5de52725f43d))，启动 IOC 容器
 			- 监听 web 中的特定事件，如 `HttpRequest` 等的创建和销毁
 	- 拦截器 Interceptor
-	  collapsed:: true
 		- 属于 SpringMVC 自身
 		- 不能拦截静态资源，只能拦截 Handler 自身
 		- 三次拦截
@@ -20,7 +18,6 @@
 			- afterCompletion 跳转页面，视图渲染之后
 			- ![image.png](../assets/image_1636296022813_0.png){:height 356, :width 461}
 		- 使用
-		  collapsed:: true
 			- 定义
 				- 实现 HandlerInterceptor 接口
 			- 注册、定义拦截范围，默认所有
