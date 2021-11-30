@@ -81,6 +81,7 @@
 	- 引用注解： ((619f64c3-15fb-44ed-8934-b62be65384d1))
 	- 导入组件：`AutoConfigurationImportSelector`
 - @SpringBootApplication
+  id:: 619f64c3-c09e-4531-b23d-30ddc19c25bd
 	- 项目启动入口
 	- 一个复合注解
 		- ((619f6329-0af6-4024-8ab2-4c7e78a4db3e))

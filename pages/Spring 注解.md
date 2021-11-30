@@ -265,7 +265,17 @@
   collapsed:: true
 	- Spring 支持[[单元测试]]的注解，需要配合 ((b975c2d7-9de9-47cb-b555-5d3f4abfef2b)) 或 ((138244a0-0488-4ee4-a579-c601756696bc)) 使用
 	- 用来指定 Sping 配置的位置，可以是 xml 或 注解
--
+- @Conditional
+	- from spring 4
+	- 按照一定条件进行判断，满足条件时注册当前类到 ioc
+	- 一些具体的 Conditional
+	- @ConditionalOnBean：在存在某个 Bean 时
+	- @ConditionalOnMissingBean：不存在某个 Bean 时
+	- @ConditionalOnClass：存在某个 class 时
+	- @ConditionalOnMissingClass：不存在某个 class 时
+	- @ConditionalOnExpression：表达式为 true，SpringEL
+	- 这些实现都位于 `spring-boot-autoconfigure:org.springframework.boot.autoconfigure.condition` 中
+	- 除这些之外还有更多的实现...
 -
 - Enable 开头的注解作用
 	- 借助 @Import 来收集和注册特定场景的 Bean
