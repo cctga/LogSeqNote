@@ -82,10 +82,12 @@
 	- 导入组件：`AutoConfigurationImportSelector`
 - @SpringBootApplication
   id:: 619f64c3-c09e-4531-b23d-30ddc19c25bd
+  collapsed:: true
 	- 项目启动入口
 	- 一个复合注解
 		- ((619f6329-0af6-4024-8ab2-4c7e78a4db3e))
 		- ((619f6393-607b-4357-877c-6e66bfd9f4fd))
 		- ((11c084cf-03ed-4d67-81a5-d582d4da1245))
--
+- @SpringBootTest
+	- Springboot 的单元测试注解
 -

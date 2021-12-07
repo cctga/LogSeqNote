@@ -17,6 +17,10 @@
   id:: 46a6510a-00e5-413c-9e48-17ea3904e0ff
   collapsed:: true
 	- 指定注入 Bean 的 id
+- @Primary
+  collapsed:: true
+	- 和 @Autowired 配合使用
+	- 当有多个相同类的实例，@Autowired 不知道注入哪一个的时候，会优先注入本注解指明的实例
 - @Value
   id:: 47abb64b-9663-4043-bbe0-2ce9881a32e9
   collapsed:: true
@@ -98,13 +102,15 @@
 	- 同 @Component
 - @Bean
   collapsed:: true
-	- 讲一个方法的返回对象作为 Bean
+	- 将一个方法的返回对象作为 Bean
+	- 如果方法有参数，将会自动寻找相应的类型参数进行注入，相当于为参数使用了 ((16e999fd-8479-457f-86aa-d2b262180114))
 - @Configuration
   id:: a097a055-ec1d-40e8-b0de-5ccc5c5ff585
   collapsed:: true
 	- 配置类注解，也是一个 @Component，多了一些参数
 	- 在纯注解 IOC 中作为容器的启动项，入口
 - @Import
+  collapsed:: true
 	- 导入其他的配置类，如果要导入 xml 或其他配置文件，可以使用 ((619f64c3-83a2-49a1-a9de-695897991da4))
 	- collapsed:: true
 	  ```java
@@ -119,6 +125,7 @@
 	  ```
 - @ImportResource
   id:: 619f64c3-83a2-49a1-a9de-695897991da4
+  collapsed:: true
 	- 引入一个或多个配置文件
 - @ComponentScan
   id:: 11c084cf-03ed-4d67-81a5-d582d4da1245
@@ -153,9 +160,17 @@
 	  @Component
 	  public class MyAspect {
 	   //定义切入点表达式
+	    
+	   //
+	   // 可以使用 || 或 && 连接多个 execution
+	   // 
+	   // 下面这个例子当然是没有意义的，只是为了展示使用方式
+	   // @Pointcut("execution(* **.*(..)) || execution(* **.*(..))")
+	   //
+	   
 	   @Pointcut("execution(* com.example.aspectjannotation.*.*(..))")
 	   //定义一个返回值为void、方法体为空的方法来命名切入点
-	   private void myPointCut(){}
+	  private void myPointCut(){}
 	    
 	   @Before("myPointCut()")
 	   public void myBefore(JoinPoint joinpoint){
@@ -185,26 +200,22 @@
 	   @After("myPointCut()")
 	   public void myAfter(){
 	    System.out.println("最终通知");
-	   }
+	  }
 	    
-	    
-	    // value 配置的是类
-	    @DeclareParents(value = "top.maoyilan.model.*", defaultImpl = OtherImpl.class)
-	    public Other other;
+	   // value 配置的是类
+	   @DeclareParents(value = "top.maoyilan.model.*", defaultImpl = OtherImpl.class)
+	   public Other other;
 	  }
 	  ```
-	- @pointcut 
-	  collapsed:: true
+	- @pointcut
 		- 声明切入点
 	- 五种连接点，可以指定使用哪一个切入点
-	  collapsed:: true
 		- @Before
 		- @After
 		- @AfterReturning
 		- @AfterThrowing
 		- @Around
 	- @DeclareParents
-	  collapsed:: true
 		- 和连接点不同，本注解使用在成员变量（Field）上
 		- 用于定义引介通知，相当于 `IntroductionInterceptor`
 		- 满足表达式的类将自动实现某些接口
@@ -235,11 +246,9 @@
 		- 原理就是动态代理
 - @SpringJUnitConfig
   id:: b975c2d7-9de9-47cb-b555-5d3f4abfef2b
-  collapsed:: true
 	- Spring 支持[[单元测试]]的注解，用来支持 ((617fdb69-8a1c-4e05-83e3-7a010c2d2a77))
 	- collapsed:: true
 	  ```java
-	  
 	  @SpringJUnitConfig
 	  @ContextConfiguration(SpringConfig.class)
 	  public class SpringTest {...}
@@ -251,9 +260,9 @@
 	  @SpringJUnitConfig(SpringConfig.class)
 	  public class SpringTest {...}
 	  ```
+	-
 - @RunWith
   id:: 138244a0-0488-4ee4-a579-c601756696bc
-  collapsed:: true
 	- Spring 支持[[单元测试]]的注解，用来支持 ((617fdb6d-05db-4b1c-9cb6-5c045bc7be78))
 	- collapsed:: true
 	  ```java
@@ -261,21 +270,31 @@
 	  @ContextConfiguration(classes = SpringConfig.class)
 	  public class SpringTest {...}
 	  ```
+	-
 - @ContextConfiguration
   collapsed:: true
 	- Spring 支持[[单元测试]]的注解，需要配合 ((b975c2d7-9de9-47cb-b555-5d3f4abfef2b)) 或 ((138244a0-0488-4ee4-a579-c601756696bc)) 使用
 	- 用来指定 Sping 配置的位置，可以是 xml 或 注解
 - @Conditional
+  id:: 619f64c3-3bf1-442d-b7f8-2eccb54915f3
+  collapsed:: true
 	- from spring 4
 	- 按照一定条件进行判断，满足条件时注册当前类到 ioc
 	- 一些具体的 Conditional
-	- @ConditionalOnBean：在存在某个 Bean 时
-	- @ConditionalOnMissingBean：不存在某个 Bean 时
-	- @ConditionalOnClass：存在某个 class 时
-	- @ConditionalOnMissingClass：不存在某个 class 时
-	- @ConditionalOnExpression：表达式为 true，SpringEL
+	- @ConditionalOnBean
+	  id:: 61a4eb51-d5e8-4ce2-a096-94d889101dc1
+		- 在存在某个 Bean 时
+	- @ConditionalOnMissingBean
+		- 不存在某个 Bean 时
+	- @ConditionalOnClass
+		- 存在某个 class 时
+	- @ConditionalOnMissingClass
+		- 不存在某个 class 时
+	- @ConditionalOnExpression
+		- 当表达式为 true，SpringEL
 	- 这些实现都位于 `spring-boot-autoconfigure:org.springframework.boot.autoconfigure.condition` 中
 	- 除这些之外还有更多的实现...
+	-
 -
 - Enable 开头的注解作用
 	- 借助 @Import 来收集和注册特定场景的 Bean

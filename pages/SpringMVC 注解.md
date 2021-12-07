@@ -1,5 +1,4 @@
 - @RequestMapping
-  collapsed:: true
 	- 指定 Handler，可用在 **方法** 和 **类** 上
 	- 参数
 		- name

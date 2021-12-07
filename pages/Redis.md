@@ -2,7 +2,17 @@ alias:: redis
 title:: Redis
 
 - [[Redis/应用]]
-- [[Redis/数据结构]]
+- 九个数据结构
+- [[Redis/Stream]]
+- [[Redis/GEO]]
+- [[Redis/BitMap]]
+- [[Redis/HyperLogLog]]
+- [[Redis/zset]]
+- [[Redis/Set]]
+- [[Redis/List]]
+- [[Redis/Hash]]
+- [[Redis/String]]
+- 九大功能
 - [[Redis/模块]]
 - [[Redis/发布与订阅]]
 - [[Redis/持久化]]

@@ -40,7 +40,6 @@
 	  collapsed:: true
 		- ((2275c93b-96cf-454a-ae61-5de52725f43d))
 - spring-test
-  collapsed:: true
 	- spring 对 `junit` 的支持
 	- 依赖 [[Junit]] ，可以引入 ((617fdb6d-05db-4b1c-9cb6-5c045bc7be78))  或 ((617fdb69-8a1c-4e05-83e3-7a010c2d2a77))
 	- ((b975c2d7-9de9-47cb-b555-5d3f4abfef2b)) ，@ContextConfiguration，@RunWith 等

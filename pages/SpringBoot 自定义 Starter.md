@@ -1,0 +1,19 @@
+- 基本的 starter 定义
+	- 命名规则
+		- spring-boot-starter 作为关键词
+		- 其中 spring-boot 自带的 starter 将关键词放在前面
+			- 如：`spring-boot-starter-data-redis`
+		- 自定义的 starter 将关键词放在后面
+			- 如：`zdy-spring-boot-starter`
+	- 创建一个项目，记得导入 spring-boot-autoconfigure
+	- 在 resources/MATE-INF 下创建 spring.factories 配置文件，指定自动配置类，自动配置类中处理创建 bean 的逻辑
+- starter 的热插拔实现
+	- 用户引入 pom 之后，只有使用 @Enable... 注解才会生效，像 AOP，只用调用了 ((82a3c07b-6fd3-4b37-a873-b4daab7c7e1d)) 才会生效
+	- 为 starter 提供 @Enable... 的启动注解，可以让用户在导入 pom 后决定是不是要生成自动装配的类
+		- 利用 ((61a4eb51-d5e8-4ce2-a096-94d889101dc1)) 或其他的 ((619f64c3-3bf1-442d-b7f8-2eccb54915f3)) 注解来配合 @Enable... 注解热装配 starter
+		- 实现思路
+			- 在自动配置类上添加 @ConditionalOnBean(ConfigMarker.class) ，表示只有 ConfigMarker 被注册成 Bean 后才进行自动配置
+			- 提供 @EnableZdy 注解，并且在该注解上使用 @Import 引入 ConfigMarker.class
+			- 这就可以使用自由用户使用了 @EnableZdy 注解，才会生成 ConfigMarker 的 Bean，才会满足 ConditionalOnBean 的条件，才会进行自动装配
+-
+-

@@ -1,21 +1,21 @@
 - 是什么
+  collapsed:: true
 	- 约定优于配置，简化配置，脚手架，快速构建 Spring 项目
 	- 基于 Spring4.0，SpringBoot2.0 基于 Spring5.0
-- 主要特性
+- 4 个主要特性
+  collapsed:: true
 	- SpringBoot Starter 起步依赖
 	  collapsed:: true
 		- 整合一些功能的 maven 包，避免自己去繁琐的引入
 		- 解决版本冲突问题
 	- JavaConfig 配置，注解配置
 	- 自动配置
-		- 添加 jar 包依赖，自动将其中的一些类注册到 IOC，方便使用
 		- 借助于 `spring.factories` 文件
+		- 添加 jar 包依赖，自动将其中的一些类注册到 IOC，方便使用
 	- 快速部署
-	  collapsed:: true
-		- 内置 Servlet 容器，Tomcat，Jetty，undertow，只需要 Java 环境
+		- 内置 Servlet 容器，Tomcat（默认），Jetty，undertow，只需要 Java 环境
 		- Jar 包运行
 - 全局配置文件
-  collapsed:: true
 	- `application.properties` 或 `application.yaml`
 	- 默认 4 个加载位置，依次加载，冲突时使用先加载的配置，两种类型 yaml 优先级更高（`>=2.4.0`）
 		- 在 2.4.0 版本之前，properties 类型优先级更高
@@ -97,8 +97,9 @@
 - [[spring-devtools 热部署]]
 - [[Spring Boot 注解]]
 - [[Spring Boot 日志]]
+- [[SpringBoot 自定义 Starter]]
 - [[Spring Boot 源码]]
--
+- [[内嵌 Tomcat 原理]]
 -
 - 解决中文乱码
   collapsed:: true

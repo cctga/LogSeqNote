@@ -9,8 +9,12 @@ alias:: Spring Framework
 	- 降低 JavaEE API 的使用难度
 	- 优秀的源码
 	- 从 Spring 3.0 开始就可以使用 JavaConfig，而不需要 applicationContext.xml 配置
+- 不同版本要求的 jdk
+	- 5.x -> jdk8+
+	- 4.x -> jdk6+
+	- 3.x -> jdk5+
 - 核心结构
-	-
+	- ![image.png](../assets/image_1638866984403_0.png){:height 357, :width 401}
 - [[Spring IOC]]
 - [[Spring DI]]
 - [[Spring AOP]]

@@ -24,4 +24,14 @@
 		- 推断应用类型
 		- 读取所有的 spring.factories 配置文件，依次注册其中所有的 Bootstrapper，ApplicationContextInitializer（初始化类），ApplicationListener（Spring 生命周期监听器）
 		- 找到有 main 方法的主配置类（启动类）
+	- `springApplication.run()`
+		- 获取并启动监听器，从配置文件 spring.factories 中读取 SpringApplicationRunListener
+			- 负责在 SpringBoot 不同阶段给 ApplicationListener 广播消息
+			- 构建应用上下文环境 ConfigurableEnvironment
+				- 读取服务器环境变量，如 JAVA_HOME，MAVEN_HOME 等
+				- 读取 Java 中的参数，如
+	- SpringBoot 负责将所有需要自动装配的类收集起来交给 spring 生成 BeanDefinition、生成 Bean
+-
+- [[内嵌 Tomcat 原理]]
+-
 -
