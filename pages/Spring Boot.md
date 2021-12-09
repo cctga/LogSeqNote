@@ -16,6 +16,7 @@
 		- 内置 Servlet 容器，Tomcat（默认），Jetty，undertow，只需要 Java 环境
 		- Jar 包运行
 - 全局配置文件
+  collapsed:: true
 	- `application.properties` 或 `application.yaml`
 	- 默认 4 个加载位置，依次加载，冲突时使用先加载的配置，两种类型 yaml 优先级更高（`>=2.4.0`）
 		- 在 2.4.0 版本之前，properties 类型优先级更高
@@ -100,6 +101,8 @@
 - [[SpringBoot 自定义 Starter]]
 - [[Spring Boot 源码]]
 - [[内嵌 Tomcat 原理]]
+- [[Spring Boot 缓存]]
+- [[Spring Boot 部署和监控]]
 -
 - 解决中文乱码
   collapsed:: true

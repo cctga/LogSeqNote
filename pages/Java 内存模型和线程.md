@@ -1,5 +1,4 @@
 - Java 内存模型
-  collapsed:: true
 	- 目的
 		-
 		  1. 来屏蔽各种硬件和操作系统的内存访问差异，以实现让Java程序在各种平台下都能达到一致的内存访问效果
@@ -11,6 +10,7 @@
 		- Java 内存模型的逻辑
 		  ![image.png](../assets/image_1638713245815_0.png){:height 189, :width 445}
 	- 主内存和工作内存的交互操作
+	  collapsed:: true
 		- 八种操作
 			- > 要求原子性，非 volatile 的 double，long 存在例外 ((61ace167-2d71-418d-bc12-70e26b189672))
 			- lock 和 unlock：作用于主内存的变量，加锁和解锁线程独占状态
@@ -30,7 +30,6 @@
 			-
 			  8. unlock 之前，必须先 store/wirte
 		- voltile 变量的特殊规则
-		  collapsed:: true
 			- 为保证内存可见性
 				- load 和 use 相关联，捆绑销售，load 之后必须是 use，use 之前必须是 load
 				- assign 和 store 相关联，捆绑销售
@@ -55,21 +54,21 @@
 			- 而针对double类型，由于现代中央处 理器中一般都包含专门用于处理浮点数据的浮点运算器(Floating Point Unit，FPU)，用来专门处理 单、双精度的浮点数据，所以哪怕是32位虚拟机中通常也不会出现非原子性访问的问题
 			- 从JDK 9起， HotSpot 增加了一个实验性的参数`-XX:+AlwaysAtomicAccesses`(这是JEP 188对Java内存模型更新的 一部分内容)来约束虚拟机对所有数据类型进行原子性的访问
 	- 特征：原子性、可见性和有序性
+	  collapsed:: true
 		- 原子性
-		  collapsed:: true
 			- 原子性变量操作包括 read、 load、assign、use、store 和 write 这六个，基本数据类型的访问、读写都是具备原子性的
 			- lock/unlock 来保证更大范围的原子性，尽管虚拟机未把 lock 和 unlock 操作直接开放给用户使用，但是却提供了更高层次的字节码指令 monitorenter 和 monitorexit 来隐式地使用这两个操作。这两个字节码指令反映到 Java 代码中就是同步块——synchronized 关键字，因此在 synchronized 块之间的操作也具备原子性
 		- 可见性
-		  collapsed:: true
 			- 指当一个线程修改了共享变量的值时，其他线程能够立即得知这个修改
 			- volatile，synchronized，final
 				- volatile的特殊规则保证了新值能立即同步到主内存，以及每次使用前立即从主内存刷新
-				- 同步块的可见 性是由“对一个变量执行unlock操作之前，必须先把此变量同步回主内存中(执行store、write操 作)”这条规则获得的
+				- 同步块的可见性是由“对一个变量执行unlock操作之前，必须先把此变量同步回主内存中(执行store、write操 作)”这条规则获得的
 				- final 则在初始化完成后，其他线程旧能立刻看到 final 字段的值，当然前提是不能有[[this 引用逃逸]]
 		- 有序性
 			- 如果在本线程内观察，所有的操作都是有序的;如果在一个线程中观察另一个线程， 所有的操作都是无序的
 			- volatile 和 synchronized 两个关键字来保证线程之间操作的有序性
 	- 先行发生原则（Happens-Before）: 只要满足就能保证线程安全
+	  collapsed:: true
 		- > 可以用来判定程序是否有线程安全问题，是否具有顺序性
 		- Java内存模型下一些“天然的”先行发生关系
 			- 程序次序规则：同一线程内的串行化
@@ -82,7 +81,6 @@
 			- 传递性：如果操作A先行发生于操作B，操作B先行发生于操作C，那就可以得出操作A先行发生于操作C的结论
 - Java 和 线程
 	- 3 种线程的实现
-	  collapsed:: true
 		- 内核线程（Kernel-Level Thread，KLT）实现： 1: 1 实现
 			- ![image.png](../assets/image_1638759221423_0.png){:height 241, :width 341}
 			- 使用内核线程作为支持来实现程序线程
@@ -106,7 +104,6 @@
 		- < JDK1.2 （Classic虚拟机）：使用用户线程实现
 		- \> JDK1.3：主流的虚拟机普遍使用 1: 1 线程模型，如 HotSpot，由于使用了 LWP，所以虚拟机无法干涉线程调用，只能给出调度建议（线程优先级）
 		- 例外的例子
-		  collapsed:: true
 			- 前面强调是两个“主流”，那就说明肯定还有例外的情况，这里举两个比较著名的例子，一个是用 于Java ME的CLDC HotSpot Implementation(CLDC-HI，介绍可见第1章)。它同时支持两种线程模 型，默认使用1:N由用户线程实现的线程模型，所有Java线程都映射到一个内核线程上;不过它也可 以使用另一种特殊的混合模型，Java线程仍然全部映射到一个内核线程上，但当Java线程要执行一个阻 塞调用时，CLDC-HI会为该调用单独开一个内核线程，并且调度执行其他Java线程，等到那个阻塞调 用完成之后再重新调度之前的Java线程继续执行。
 			- 另外一个例子是在Solaris平台的HotSpot虚拟机，由于操作系统的线程特性本来就可以同时支持 1:1(通过Bound Threads或Alternate Libthread实现)及N:M(通过LWP/Thread Based Synchronization 实现)的线程模型，因此Solaris版的HotSpot也对应提供了两个平台专有的虚拟机参数，即-XX: +UseLWPSynchronization(默认值)和-XX:+UseBoundThreads来明确指定虚拟机使用哪种线程模 型。
 	- Java 线程调度
@@ -126,6 +123,9 @@
 				- 不仅仅体现在优先级的映射关系需要考虑不同的系统，而在于系统可能会对执行频繁的线程主动多分配时间，系统会主动优化，所以不能判断说会执行等级高的线程
 	- Java 7 个线程状态转换
 		- ![image.png](../assets/image_1638798141018_0.png){:height 243, :width 453}
+		- block 和 wait 的区别：
+			- block 不响应中断，wait 响应中断
+			- block 等待获得锁，wait 等待时间或等待其他线程唤醒（等待一个条件）
 		- > 其中 Running 和 Ready 两种系统线程状态被 Java 语言定义为一种状态：Runnable
 - [[volatile]] Java虚拟机提供的最轻量级的同步机制
 -

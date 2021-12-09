@@ -15,13 +15,18 @@
 		- 用来指定方法中的位置
 		- 5 种连接点
 			- 执行前，beforeMethod
+			  id:: 617fe335-4571-4ade-8349-3809beb57b6c
 				- 可以获取入参，通过 JoinPoint 对象参数来获取
 			- 执行后，afterMethod
+			  id:: 617fe344-d039-4eb8-8b9a-7cf34ee9626f
 			- 正常结束，afterReturningMethod
+			  id:: 617fe394-9340-4020-9fb6-ce9ea3b7d010
 				- 可以获取返回值，通过 JoinPoint 对象参数来获取，或使用参数 `returning` 来指定一个参数接受返回值
 			- 抛出异常结束，afterThrowingMethod
+			  id:: 617fe3bb-a39c-4070-91f7-c4ee948e9831
 				- 可以获取异常，，通过 （JoinPoint，Throwable） 两个对象参数来获取
 			- 环绕，aroundMethod
+			  id:: 617fe38a-0a95-489b-a806-871c6258da99
 				- 可以使用 ProceedingJoinPoint 对象参数
 				- 可以控制执行逻辑
 				- 可以替代其他所有类型的连接点

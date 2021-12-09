@@ -191,12 +191,15 @@
 	    System.out.println("环绕结束。。。");
 	    return obj;
 	   }
-	    
+	   
+	   
 	   @AfterThrowing(value="myPointCut()",throwing="e")
 	   public void myAfterThrowing(JoinPoint joinpoint,Throwable e){
 	    System.out.println("异常通知："+e.getMessage());
 	   }
 	    
+	   // 无论是否抛出异常都会执行
+	   // after finally
 	   @After("myPointCut()")
 	   public void myAfter(){
 	    System.out.println("最终通知");
@@ -209,43 +212,81 @@
 	  ```
 	- @pointcut
 		- 声明切入点
+		- 切入点不但可以使用 execution 声明，还可以使用多种其他形式
+		- ![image.png](../assets/image_1638883317223_0.png){:height 209, :width 237}
+		- 在连接点中使用时可以用逻辑符连接多个切入点
+		- ```java
+		  @Around("point1() && @annotation(with)")
+		  public Object po(ProceedingJoinPoint point, RoutingWith with) throws Throwable {
+		    System.out.println(with);
+		    Object proceed = point.proceed();
+		    return proceed;
+		  }
+		  ```
 	- 五种连接点，可以指定使用哪一个切入点
 		- @Before
 		- @After
 		- @AfterReturning
 		- @AfterThrowing
 		- @Around
-	- @DeclareParents
-		- 和连接点不同，本注解使用在成员变量（Field）上
-		- 用于定义引介通知，相当于 `IntroductionInterceptor`
-		- 满足表达式的类将自动实现某些接口
-		  collapsed:: true
-			- collapsed:: true
-			  ```java
-			  public class LogService {
-			    void addLog(Log log);
-			  }
-			  
-			  public class LogServiceImpl {
-			    public void addLog(Log log){
-			      // 实现
-			    }
-			  }
-			  
-			  @Component
-			  @Aspect
-			  public class AspectConfig {
-			      /**
-			       * "+"表示person的所有子类；defaultImpl 表示默认需要添加的新的类
-			       */
-			      @DeclareParents(value = "top.maoyilan.service.Person+", defaultImpl = FemaleAnimal.class)
-			      public Animal animal;
-			  }
-			  
-			  ```
-		- 原理就是动态代理
+		- > 关于连接点使用的切入点，可以使用多种形式
+		  ![image.png](../assets/image_1638883091037_0.png){:height 270, :width 295}
+- @DeclareParents
+  collapsed:: true
+	- 和连接点不同，本注解使用在成员变量（Field）上
+	- 用于定义引介通知，相当于 `IntroductionInterceptor`
+	- 满足表达式的类将自动实现某些接口
+		- collapsed:: true
+		  ```java
+		  public class LogService {
+		    void addLog(Log log);
+		  }
+		  
+		  public class LogServiceImpl {
+		    public void addLog(Log log){
+		      // 实现
+		    }
+		  }
+		  
+		  @Component
+		  @Aspect
+		  public class AspectConfig {
+		      /**
+		       * "+"表示person的所有子类；defaultImpl 表示默认需要添加的新的类
+		       */
+		      @DeclareParents(value = "top.maoyilan.service.Person+", defaultImpl = FemaleAnimal.class)
+		      public Animal animal;
+		  }
+		  
+		  ```
+	- 原理就是动态代理
+- @Before
+  collapsed:: true
+	- 前置通知
+	- ((617fe335-4571-4ade-8349-3809beb57b6c))
+	- 参数：`JoinPoint jp`
+- @After
+  collapsed:: true
+	- 最终通知，after finally，无论方法是否异常都会执行
+	- ((617fe344-d039-4eb8-8b9a-7cf34ee9626f))
+- @AfterReturning
+  collapsed:: true
+	- 方法正常执行完成才会执行
+	- ((617fe394-9340-4020-9fb6-ce9ea3b7d010))
+	- 参数：`JoinPoint jp`
+- @AfterThrowing
+  collapsed:: true
+	- 方法异常才会执行
+	- ((617fe3bb-a39c-4070-91f7-c4ee948e9831))
+	- 参数：`JoinPoint jp, Throwable e`
+- @Around
+  collapsed:: true
+	- 环绕通知
+	- ((617fe38a-0a95-489b-a806-871c6258da99))
+	- 参数：`ProceedingJoinPoint jp`
 - @SpringJUnitConfig
   id:: b975c2d7-9de9-47cb-b555-5d3f4abfef2b
+  collapsed:: true
 	- Spring 支持[[单元测试]]的注解，用来支持 ((617fdb69-8a1c-4e05-83e3-7a010c2d2a77))
 	- collapsed:: true
 	  ```java
@@ -263,6 +304,7 @@
 	-
 - @RunWith
   id:: 138244a0-0488-4ee4-a579-c601756696bc
+  collapsed:: true
 	- Spring 支持[[单元测试]]的注解，用来支持 ((617fdb6d-05db-4b1c-9cb6-5c045bc7be78))
 	- collapsed:: true
 	  ```java
@@ -295,6 +337,56 @@
 	- 这些实现都位于 `spring-boot-autoconfigure:org.springframework.boot.autoconfigure.condition` 中
 	- 除这些之外还有更多的实现...
 	-
+- @Profile
+  id:: 61b0a8b4-b885-4817-9bd2-f77c0a28f6f8
+	- 可以使用在 *方法* 或 *类* 上，表示该方法或类是应用在指定的环境中
+	  以进行 多环境开发部署
+		- ```java
+		  // 1. 修饰类
+		  
+		  // 开发环境数据库配置
+		  @Configuration
+		  @Profile("prod")
+		  public class JndiDataConfig {
+		    @Bean(destroyMethod="")
+		    public DataSource dataSource() throws Exception {
+		      Context ctx = new InitialContext();
+		      return (DataSource) ctx.lookup("java:comp/env/jdbc/datasource");
+		    }
+		  }
+		  
+		  // 2. 修饰方法
+		  
+		  // 开发环境数据库配置
+		  @Configuration
+		  public class AppConfig {
+		    @Bean("dataSource")
+		    @Profile("dev")
+		    public DataSource standaloneDataSource() {
+		      return new EmbeddedDatabaseBuilder()
+		        .setType(EmbeddedDatabaseType.HSQL)
+		        .addScript("classpath:com/bank/config/sql/schema.sql")
+		        .addScript("classpath:com/bank/config/sql/test-data.sql")
+		        .build();
+		    }
+		    @Bean("dataSource")
+		    @Profile("prod")
+		    public DataSource jndiDataSource() throws Exception {
+		      Context ctx = new InitialContext();
+		      return (DataSource) ctx.lookup("java:comp/env/jdbc/datasource");
+		    }
+		  }
+		  
+		  // 3. 可以修饰某个注解，方便使用
+		  @Target(ElementType.TYPE)
+		  @Retention(RetentionPolicy.RUNTIME)
+		  @Profile("prod")
+		  public @interface Production {
+		  }
+		  ```
+	- 配合环境配置 `spring.profiles.active=dev` 便捷多环境开发部署
+		- 激活方式就是做相应的配置
+		- 可以在 properties 、yml 配置文件中，也可以使用在启动命令中添加该配置，然后配合启动脚本，部署的时候默认使用 prod 环境，这就很方便了
 -
 - Enable 开头的注解作用
 	- 借助 @Import 来收集和注册特定场景的 Bean
