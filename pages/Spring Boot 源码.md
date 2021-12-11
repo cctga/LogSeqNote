@@ -1,4 +1,5 @@
 - 依赖管理
+  collapsed:: true
 	- 不用指定 jar 包的版本号，如 spring-boot-starter-log4j2 版本
 		- 在父依赖（spring-boot-dependencies）中使用 dependencyManagement 标签进行了版本管理
 	- 不用引入相关的 jar 包，如 tomcat 相关 jar 包
@@ -11,7 +12,6 @@
 				- 作用就是将所有符合条件的 ((a097a055-ec1d-40e8-b0de-5ccc5c5ff585)) 类都加入 IOC
 				- 怎么做到的
 					- 实现了多个 Aware，获取多个 ioc 重要对象
-					  collapsed:: true
 						- BeanClassLoaderAware 获取 beanClassLoader
 						- ResourceLoaderAware 获取 resourceLoader
 						- BeanFactoryAware 获取 beanFactory

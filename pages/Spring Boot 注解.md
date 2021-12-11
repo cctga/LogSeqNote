@@ -74,7 +74,7 @@
 - @AutoConfigurationPackage
   id:: 619f64c3-15fb-44ed-8934-b62be65384d1
 	- 自动配置包
-	- 为容器导入一个组件：`AutoConfigurationPackage.Registar`，注册 `BasePackage` 类
+	- 为容器导入一个组件：`AutoConfigurationPackage.Registar`，注册 `BasePackage` 类，其实也就是保存了 SpringBoot 启动类的包路径
 - @EnableAutoConfiguration
   id:: 619f6393-607b-4357-877c-6e66bfd9f4fd
 	- 启用自动配置功能，完成 SpringBoot 自动配置的功能，核心注解
