@@ -166,7 +166,7 @@
 
  :ref/linked-references-collapsed-threshold 50
  :journal/page-title-format "yyyy-MM-dd"
- :favorites ["TODO" "test" "temp"]
+ :favorites ["类加载机制" "TODO" "test" "temp"]
  :graph/settings {:orphan-pages? true, :journal? false, :builtin-pages? false}
  :feature/enable-journals? false
  :default-home {}

@@ -15,15 +15,19 @@
 - Aware 有哪些
 	- BeanNameAware
 		- 获取当前 Bean 在容器中所在的名称
-	- BeanFactoryAware
-		- 获取当前 Bean 所在的 BeanFactory
 	- ApplicationContextAware
 		- 获取容器的资源
 	- MessageSourceAware
 		- 获取 Message Source 相关的文本信息
 	- ApplicationEventPublisherAware
 		- 发布事件
+	- > 以下四个 Aware 被 AutoConfigurationImportSelector Spring Boot 自动配置类实现
+	- BeanFactoryAware
+		- 获取当前 Bean 所在的 BeanFactory
 	- ResourceLoaderAware
 		- 获取资源加载器，以获得外部资源文件
+	- BeanClassLoaderAware
+	- EnviromentAware
+		- 环境
 - 使用多个 Aware  执行顺序是怎么样的
 	- BeanNameAware -> BeanFactoryAware -> applicationContextAware
